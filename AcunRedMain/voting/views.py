@@ -29,3 +29,6 @@ def results(request, post_id):
 
 def vote(request, post_id):
     return HttpResponse("You're voting on post %s." % post_id)
+
+def comment(request, post_id):
+    return HttpResponse("You're commeting on post %s." % post_id)
