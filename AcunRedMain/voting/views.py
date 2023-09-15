@@ -2,10 +2,17 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Post,Choice
 from django.http import Http404
+from django.template import loader
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello world")
+    latest_post_list = Post.objects.order_by("-pub_date")[:5]
+    template = loader.get_template("voting/index.html")
+    context = {
+        "latest_post_list": latest_post_list,
+    }
+    return HttpResponse(template.render(context, request))
+
 
 
 def detail(request, post_id):
