@@ -20,6 +20,8 @@ def detail(request, post_id):
         post = Post.objects.get(pk=post_id)
     except Post.DoesNotExist:
         raise Http404("post does not exist")
+    print("----------------------")
+    print("----------------------")
     return render(request, "voting/detail.html", {"post": post})
 
 def results(request, post_id):

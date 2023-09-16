@@ -6,10 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{ post.post_text }}</h1>
+    <h1>"IDEA:"{{ post.post_text }}</h1>
     <ul>
     {% for choice in post.choice_set.all %}
         <li>{{ choice.choice_text }}</li>
+        <li>"votes":{{ choice.votes }}</li>
+       
     {% endfor %}
     </ul>
 </body>
