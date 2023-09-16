@@ -9,9 +9,10 @@
     <h1>"IDEA:"{{ post.post_text }}</h1>
     <ul>
     {% for choice in post.choice_set.all %}
-        <li>{{ choice.choice_text }}</li>
-        <li>"votes":{{ choice.votes }}</li>
-       
+        <li>option :{{ choice.choice_text }}</li>
+        <ul>
+            <li>"votes":{{ choice.votes }}</li>
+        </ul>
     {% endfor %}
     </ul>
 </body>
